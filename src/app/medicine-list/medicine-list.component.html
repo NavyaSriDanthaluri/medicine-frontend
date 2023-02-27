@@ -1,0 +1,25 @@
+<h2>Medicine List</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Medicine Name</th>
+            <th>Price</th>
+            <th>Manufactured Date</th>
+            <th>Expiry Date</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let medicine of medicines">
+            <td> {{medicine.medicineName}}</td>
+            <td> {{medicine.price}}</td>
+            <td> {{medicine.manufacturedDate}}</td>
+            <td> {{medicine.expiryDate}}</td>
+            <td>
+                <button (click) = "updateMedicine(medicine.id)" class="btn btn-info">Update</button>
+                <button (click) = "deleteMedicine(medicine.id)" class="btn btn-danger" style="margin-left: 10px">Delete</button>
+                <button (click) = "medicineDetails(medicine.id)" class="btn btn-info" style="margin-left: 10px">View</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
